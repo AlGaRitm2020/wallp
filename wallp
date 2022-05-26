@@ -1,0 +1,11 @@
+#!/bin/bash
+
+sxiv ~/Pictures/wallpapers/ -o -f -t > ~/Pictures/wallpapers/current
+
+if [ $1 = '0' ]
+then
+	cat ~/Pictures/wallpapers/current | xargs feh --bg-scale 0
+else
+	cat ~/Pictures/wallpapers/current | xargs feh --bg-scale 
+fi
+
