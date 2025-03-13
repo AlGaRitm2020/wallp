@@ -1,14 +1,19 @@
 #!/bin/bash
 
-hpconf="/home/albert/.config/hypr/hyprpaper.conf"
-# cleaning and configuring preload
-echo > /home/albert/.config/hypr/hyprpaper.conf
+#hpconf="/home/albert/.config/hypr/hyprpaper.conf"
+#echo > /home/albert/.config/hypr/hyprpaper.conf
 #echo "preload=~/.config/hypr/wallpapers/scary_trees.png" >> $hpconf
+
 files=$(sxiv ~/.config/hypr/wallpapers/* -o -f -t)
 arr=($files)
 echo "first image selected: ${arr[0]}"
 echo "second image selected: ${arr[1]}"
 
+if [[ -z ${arr[1]} ]]; then
+  echo "No second image was selected."
+  echo "Setting one image to all(2) monitors"
+  arr=($files $files)
+fi
 # echo "preload = ${arr[0]}"  >> $hpconf
 # echo "wallpaper = eDP-1, ${arr[0]}"  >> $hpconf
 #
