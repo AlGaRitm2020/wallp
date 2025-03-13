@@ -2,6 +2,9 @@
 # Description
 This program allows to set up a wallpaper via sxiv on 2 or more monitors. 
 
+
+![Alt Text](gif/usage.gif)
+
 # Dependencies 
 ## X11 variation
 - sxiv 
